@@ -17,6 +17,10 @@
     &--subHeader{
         @include subheader;
         min-height: 42px;
+
+        @media only screen and (max-width: $mobile) {
+            display: none;
+        }
     }
   
     &--answerArea {
@@ -37,6 +41,14 @@
         display: grid;
         grid-auto-flow: column;
         grid-gap: 10px;
+
+        @media screen and (max-width: $tablet) {
+            grid-auto-flow: row;
+            // width: 375px;
+            grid-template-columns: 50% 50%;
+            // justify-items: center;
+            // grid-gap: 17px 6px;
+        }
     }
 
     &--submitButtonContainer {
@@ -44,5 +56,11 @@
         .submitButton {
             float: right;
         }
+
+        @media screen and (max-width: $mobile) {
+            padding: 0 10px;
+            float: unset;
+        }
     }
+
 }
